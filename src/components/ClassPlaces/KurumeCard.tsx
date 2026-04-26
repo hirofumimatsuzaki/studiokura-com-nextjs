@@ -1,15 +1,17 @@
 import { ClassPlaceCard } from '@/components/ClassPlaceCard';
+import type { ClassPlaceAvailabilityProps } from '@/components/ClassPlaces/types';
 
-const KurumeCard = () => (
+const KurumeCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
   <ClassPlaceCard
-    placeName="久留米校"
+    placeName="荵・蕗邀ｳ譬｡"
     imageSrc="placecard-kurume.jpg"
     linkHref="/kurume"
     adultsClass={true}
     kidsClass={true}
     programmingClass={true}
+    availabilityText={availabilityText}
   >
-    福岡県久留米市天神町31-6 朝日ビル502
+    遖丞ｲ｡逵御ｹ・蕗邀ｳ蟶ょ､ｩ逾樒伴31-6 譛晄律繝薙Ν502
   </ClassPlaceCard>
 );
 

@@ -1,15 +1,17 @@
 import { ClassPlaceCard } from '@/components/ClassPlaceCard';
+import type { ClassPlaceAvailabilityProps } from '@/components/ClassPlaces/types';
 
-const TakeoCard = () => (
+const TakeoCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
   <ClassPlaceCard
-    placeName="武雄校"
+    placeName="豁ｦ髮・｡"
     imageSrc="placecard-takeo.jpg"
     linkHref="/takeo"
     adultsClass={false}
     kidsClass={true}
     programmingClass={false}
+    availabilityText={availabilityText}
   >
-    〒843-0022 佐賀県武雄市武雄町大字武雄7271 ARTS ITOYA
+    縲・43-0022 菴占ｳ逵梧ｭｦ髮・ｸよｭｦ髮・伴螟ｧ蟄玲ｭｦ髮・271 ARTS ITOYA
   </ClassPlaceCard>
 );
 

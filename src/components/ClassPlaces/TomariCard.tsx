@@ -1,15 +1,17 @@
 import { ClassPlaceCard } from '@/components/ClassPlaceCard';
+import type { ClassPlaceAvailabilityProps } from '@/components/ClassPlaces/types';
 
-const TomariCard = () => (
+const TomariCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
   <ClassPlaceCard
-    placeName="泊校"
+    placeName="豕頑｡"
     imageSrc="placecard-tomari.jpg"
     linkHref="/tomari"
     adultsClass={false}
     kidsClass={true}
     programmingClass={false}
+    availabilityText={availabilityText}
   >
-    〒819-1111 福岡県糸島市泊１２１６−２ 泊第ー公民館
+    縲・19-1111 遖丞ｲ｡逵檎ｳｸ蟲ｶ蟶よｳ奇ｼ托ｼ抵ｼ托ｼ問・・・豕顔ｬｬ繝ｼ蜈ｬ豌鷹､ｨ
   </ClassPlaceCard>
 );
 

@@ -1,15 +1,17 @@
 import { ClassPlaceCard } from '@/components/ClassPlaceCard';
+import type { ClassPlaceAvailabilityProps } from '@/components/ClassPlaces/types';
 
-const ItoshimaCard = () => (
+const ItoshimaCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
   <ClassPlaceCard
-    placeName="糸島校"
+    placeName="邉ｸ蟲ｶ譬｡"
     imageSrc="placecard-itoshima.jpg"
     linkHref="/itoshima"
     adultsClass={true}
     kidsClass={true}
     programmingClass={true}
+    availabilityText={availabilityText}
   >
-    〒819-1613 福岡県糸島市二丈松末586
+    縲・19-1613 遖丞ｲ｡逵檎ｳｸ蟲ｶ蟶ゆｺ御ｸ域收譛ｫ586
   </ClassPlaceCard>
 );
 

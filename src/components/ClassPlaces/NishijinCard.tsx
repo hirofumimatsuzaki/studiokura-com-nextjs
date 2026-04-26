@@ -1,15 +1,17 @@
 import { ClassPlaceCard } from '@/components/ClassPlaceCard';
+import type { ClassPlaceAvailabilityProps } from '@/components/ClassPlaces/types';
 
-const NishijinCard = () => (
+const NishijinCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
   <ClassPlaceCard
-    placeName="西新校"
+    placeName="隘ｿ譁ｰ譬｡"
     imageSrc="placecard-nishijin.jpg"
     linkHref="/nishijin"
     adultsClass={true}
     kidsClass={true}
     programmingClass={true}
+    availabilityText={availabilityText}
   >
-    福岡県福岡市西新一丁目11-27 ロフティ西新903号室
+    遖丞ｲ｡逵檎ｦ丞ｲ｡蟶り･ｿ譁ｰ荳荳∫岼11-27 繝ｭ繝輔ユ繧｣隘ｿ譁ｰ903蜿ｷ螳､
   </ClassPlaceCard>
 );
 

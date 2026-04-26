@@ -1,15 +1,17 @@
 import { ClassPlaceCard } from '@/components/ClassPlaceCard';
+import type { ClassPlaceAvailabilityProps } from '@/components/ClassPlaces/types';
 
-const HashimotoCard = () => (
+const HashimotoCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
   <ClassPlaceCard
-    placeName="橋本校"
+    placeName="讖区悽譬｡"
     imageSrc="placecard-hashimoto.jpg"
     linkHref="/hashimoto"
     adultsClass={false}
     kidsClass={true}
     programmingClass={false}
+    availabilityText={availabilityText}
   >
-    福岡県福岡市西区橋本2-27-2 木の葉モール橋本 JEUGIAカルチャーセンター内
+    遖丞ｲ｡逵檎ｦ丞ｲ｡蟶り･ｿ蛹ｺ讖区悽2-27-2 譛ｨ縺ｮ闡峨Δ繝ｼ繝ｫ讖区悽 JEUGIA繧ｫ繝ｫ繝√Ε繝ｼ繧ｻ繝ｳ繧ｿ繝ｼ蜀・
   </ClassPlaceCard>
 );
 

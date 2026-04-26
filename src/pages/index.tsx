@@ -1,4 +1,5 @@
 import { Box, Button, Heading, Stack, Text } from '@chakra-ui/react';
+import type { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import NextLink from 'next/link';
 import { LuArrowRight, LuMapPin } from 'react-icons/lu';
 
@@ -26,8 +27,58 @@ import { Container } from '@/components/Container';
 import { Footer } from '@/components/Footer';
 import { CardStack, Layout } from '@/components/Layout';
 import { Navigation } from '@/components/Navigation';
+import { fetchTopMemosFromBff, type TopMemoMap } from '@/utils/classPlacePage';
 
-const Index = () => (
+const HOMEPAGE_CLASS_PLACE_SLUGS = [
+  'itoshima',
+  'nishijin',
+  'takeo',
+  'hakozaki',
+  'hakozaki2',
+  'hashimoto',
+  'meinohama',
+  'sarayama',
+  'momochi',
+  'kashii',
+  'motooka',
+  'befu',
+  'onojyo',
+  'nagazumi',
+  'tomari',
+  'kurume',
+  'online',
+] as const;
+
+const normalizeAvailabilityText = (value: string | null): string | undefined => {
+  if (!value) return undefined;
+  const normalized = value
+    .replace(/<br\s*\/?>/gi, ' ')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return normalized || undefined;
+};
+
+export const getServerSideProps: GetServerSideProps<{
+  topMemos: TopMemoMap;
+}> = async (context) => {
+  context.res.setHeader('Cache-Control', 'no-store, max-age=0');
+  const { topMemos } = await fetchTopMemosFromBff(
+    context.req,
+    [...HOMEPAGE_CLASS_PLACE_SLUGS]
+  );
+
+  return {
+    props: {
+      topMemos,
+    },
+  };
+};
+
+const Index = ({
+  topMemos,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => (
   <Layout title="福岡・糸島の子ども絵画教室と造形教室の体験レッスン | Studio Kura">
     <Navigation />
     <Container zIndex={0}>
@@ -122,33 +173,33 @@ const Index = () => (
         </Text>
       </Box>
       <CardStack>
-        <ItoshimaCard />
-        <NishijinCard />
-        <TakeoCard />
+        <ItoshimaCard availabilityText={normalizeAvailabilityText(topMemos.itoshima)} />
+        <NishijinCard availabilityText={normalizeAvailabilityText(topMemos.nishijin)} />
+        <TakeoCard availabilityText={normalizeAvailabilityText(topMemos.takeo)} />
       </CardStack>
       <CardStack>
-        <HakozakiCard />
-        <Hakozaki2Card />
+        <HakozakiCard availabilityText={normalizeAvailabilityText(topMemos.hakozaki)} />
+        <Hakozaki2Card availabilityText={normalizeAvailabilityText(topMemos.hakozaki2)} />
       </CardStack>
       <CardStack>
-        <HashimotoCard />
-        <MeinohamaCard />
-        <SarayamaCard />
+        <HashimotoCard availabilityText={normalizeAvailabilityText(topMemos.hashimoto)} />
+        <MeinohamaCard availabilityText={normalizeAvailabilityText(topMemos.meinohama)} />
+        <SarayamaCard availabilityText={normalizeAvailabilityText(topMemos.sarayama)} />
       </CardStack>
       <CardStack>
-        <MomochiCard />
-        <KashiiCard />
-        <MotookaCard />
+        <MomochiCard availabilityText={normalizeAvailabilityText(topMemos.momochi)} />
+        <KashiiCard availabilityText={normalizeAvailabilityText(topMemos.kashii)} />
+        <MotookaCard availabilityText={normalizeAvailabilityText(topMemos.motooka)} />
       </CardStack>
       <CardStack>
-        <BefuCard />
-        <OnojyoCard />
-        <NagazumiCard />
+        <BefuCard availabilityText={normalizeAvailabilityText(topMemos.befu)} />
+        <OnojyoCard availabilityText={normalizeAvailabilityText(topMemos.onojyo)} />
+        <NagazumiCard availabilityText={normalizeAvailabilityText(topMemos.nagazumi)} />
       </CardStack>
       <CardStack>
-        <TomariCard />
-        <KurumeCard />
-        <OnlineCard />
+        <TomariCard availabilityText={normalizeAvailabilityText(topMemos.tomari)} />
+        <KurumeCard availabilityText={normalizeAvailabilityText(topMemos.kurume)} />
+        <OnlineCard availabilityText={normalizeAvailabilityText(topMemos.online)} />
       </CardStack>
       <Footer />
     </Container>

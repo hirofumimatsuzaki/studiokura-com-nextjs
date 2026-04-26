@@ -24,6 +24,8 @@ type FetchTopMemoFromBffResult = {
   error?: string;
 };
 
+export type TopMemoMap = Record<string, string | null>;
+
 export const fetchTopMemoFromBff = async (
   req: IncomingMessage,
   slug: string
@@ -78,3 +80,47 @@ export const getClassPlaceServerSideProps = (
     });
     return { props: { topMemo: fallback } };
   };
+
+export const fetchTopMemosFromBff = async (
+  req: IncomingMessage,
+  slugs: string[]
+): Promise<{ topMemos: TopMemoMap; requestId: string }> => {
+  const requestId = readRequestId(req);
+  const topMemos = Object.fromEntries(
+    slugs.map((slug) => [slug, null])
+  ) as TopMemoMap;
+
+  if (!classPlacesApiUri) {
+    console.error('[index-page] class place api unavailable', {
+      requestId,
+      endpoint: 'unknown',
+      status: 'missing-env',
+      error: 'CLASS_PLACES_API_URI is not set',
+    });
+    return { topMemos, requestId };
+  }
+
+  const results = await Promise.all(
+    slugs.map(async (slug) => {
+      const result = await fetchClassPlace(slug, classPlacesApiUri, upstreamTimeoutMs);
+      return { slug, result };
+    })
+  );
+
+  for (const { slug, result } of results) {
+    if (result.memo) {
+      topMemos[slug] = result.memo;
+      continue;
+    }
+
+    console.error('[index-page] class place memo unavailable', {
+      slug,
+      requestId,
+      endpoint: result.endpoint,
+      status: result.status,
+      error: result.error,
+    });
+  }
+
+  return { topMemos, requestId };
+};
