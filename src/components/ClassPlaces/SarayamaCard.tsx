@@ -3,7 +3,7 @@ import type { ClassPlaceAvailabilityProps } from '@/components/ClassPlaces/types
 
 const SarayamaCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
   <ClassPlaceCard
-    placeName="逧ｿ螻ｱ譬｡"
+    placeName="皿山校"
     imageSrc="placecard-sarayama.jpg"
     linkHref="/sarayama"
     adultsClass={false}
@@ -11,7 +11,7 @@ const SarayamaCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
     programmingClass={false}
     availabilityText={availabilityText}
   >
-    縲・11-1365 遖丞ｲ｡蟶ょ漉蛹ｺ逧ｿ螻ｱ2-1-57
+    福岡市南区皿山エリア
   </ClassPlaceCard>
 );
 

@@ -3,7 +3,7 @@ import type { ClassPlaceAvailabilityProps } from '@/components/ClassPlaces/types
 
 const MotookaCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
   <ClassPlaceCard
-    placeName="蜈・ｲ｡譬｡"
+    placeName="元岡校"
     imageSrc="placecard-motooka.jpg"
     linkHref="/motooka"
     adultsClass={false}
@@ -11,7 +11,7 @@ const MotookaCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
     programmingClass={false}
     availabilityText={availabilityText}
   >
-    遖丞ｲ｡逵檎ｦ丞ｲ｡蟶り･ｿ蛹ｺ蜈・ｲ｡・托ｼ包ｼ呻ｼ・縺後ｄ縺後ｄ髢 蜀・
+    福岡市西区元岡エリア
   </ClassPlaceCard>
 );
 

@@ -3,7 +3,7 @@ import type { ClassPlaceAvailabilityProps } from '@/components/ClassPlaces/types
 
 const Hakozaki2Card = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
   <ClassPlaceCard
-    placeName="邂ｱ蟠守ｬｬ莠梧｡"
+    placeName="箱崎校II"
     imageSrc="placecard-hakozaki2.jpg"
     linkHref="/hakozaki2"
     adultsClass={false}
@@ -11,7 +11,7 @@ const Hakozaki2Card = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
     programmingClass={false}
     availabilityText={availabilityText}
   >
-    遖丞ｲ｡逵檎ｦ丞ｲ｡蟶よ擲蛹ｺ邂ｱ蟠趣ｼ剃ｸ∫岼・托ｼ絶・・難ｼ・
+    福岡市東区箱崎エリア
   </ClassPlaceCard>
 );
 

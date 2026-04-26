@@ -1,10 +1,8 @@
 import {
-  Badge,
   Box,
   Button,
   Center,
   Divider,
-  HStack,
   Heading,
   Image,
   Stack,
@@ -27,6 +25,9 @@ type ClassPlaceCardProps = {
   children?: ReactNode;
 };
 
+const defaultAvailabilityText =
+  '空き状況は準備中です。体験レッスン申込フォームから最新状況をご確認ください。';
+
 const ClassPlaceCard = (props: ClassPlaceCardProps) => {
   const {
     placeName,
@@ -35,11 +36,12 @@ const ClassPlaceCard = (props: ClassPlaceCardProps) => {
     adultsClass,
     kidsClass,
     programmingClass,
-    availabilityText = '空き状況は準備中です。体験レッスン申込フォームから最新状況をご確認ください。',
+    availabilityText = defaultAvailabilityText,
     children,
   } = props;
   const cdnDomain = process.env.NEXT_PUBLIC_CDN_DOMAIN ?? '';
   const cdnDirectory = process.env.NEXT_PUBLIC_CDN_DIRECTORY ?? '';
+
   return (
     <Center py={6} px={4}>
       <Box
@@ -57,7 +59,7 @@ const ClassPlaceCard = (props: ClassPlaceCardProps) => {
           alt={`${placeName}の写真`}
           mb={4}
           minW="100%"
-          pos={'relative'}
+          pos="relative"
           _after={{
             content: '""',
             w: 4,
@@ -71,7 +73,7 @@ const ClassPlaceCard = (props: ClassPlaceCardProps) => {
           }}
         />
         <Box px={4}>
-          <Heading fontSize={'2xl'} fontFamily={'body'}>
+          <Heading fontSize="2xl" fontFamily="body">
             <Button
               href={linkHref}
               as={NextLink}
@@ -89,28 +91,28 @@ const ClassPlaceCard = (props: ClassPlaceCardProps) => {
             {adultsClass && (
               <>
                 <Tag size="md" variant="solid" colorScheme="red">
-                  大人の絵画
+                  大人の絵画教室
                 </Tag>{' '}
               </>
             )}
             {kidsClass && (
               <>
                 <Tag size="md" variant="solid" colorScheme="yellow">
-                  子ども絵画
+                  子ども絵画教室
                 </Tag>{' '}
               </>
             )}
             {programmingClass && (
               <>
                 <Tag size="md" variant="solid" colorScheme="green">
-                  電子工作
+                  電子工作教室
                 </Tag>{' '}
               </>
             )}
           </Box>
           <Text
             color={useColorModeValue('gray.700', 'gray.400')}
-            textAlign={'left'}
+            textAlign="left"
           >
             <>{children}</>
           </Text>
@@ -122,12 +124,9 @@ const ClassPlaceCard = (props: ClassPlaceCardProps) => {
             rounded="lg"
             bg={useColorModeValue('gray.50', 'gray.800')}
           >
-            <HStack justify="space-between" align="center" mb={2}>
-              <Text fontSize="sm" fontWeight="bold">
-                空き状況
-              </Text>
-              <Badge colorScheme="orange">準備中</Badge>
-            </HStack>
+            <Text fontSize="sm" fontWeight="bold" mb={2}>
+              空き状況
+            </Text>
             <Text fontSize="sm" color={useColorModeValue('gray.600', 'gray.300')}>
               {availabilityText}
             </Text>
@@ -136,7 +135,7 @@ const ClassPlaceCard = (props: ClassPlaceCardProps) => {
           <Stack direction={['column', 'row']} spacing={3}>
             <Button
               as={NextLink}
-              href={'/trial'}
+              href="/trial"
               colorScheme="blue"
               leftIcon={<LuCalendarCheck />}
               flex={1}

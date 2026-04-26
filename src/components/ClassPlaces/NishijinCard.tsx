@@ -3,7 +3,7 @@ import type { ClassPlaceAvailabilityProps } from '@/components/ClassPlaces/types
 
 const NishijinCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
   <ClassPlaceCard
-    placeName="隘ｿ譁ｰ譬｡"
+    placeName="西新校"
     imageSrc="placecard-nishijin.jpg"
     linkHref="/nishijin"
     adultsClass={true}
@@ -11,7 +11,7 @@ const NishijinCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
     programmingClass={true}
     availabilityText={availabilityText}
   >
-    遖丞ｲ｡逵檎ｦ丞ｲ｡蟶り･ｿ譁ｰ荳荳∫岼11-27 繝ｭ繝輔ユ繧｣隘ｿ譁ｰ903蜿ｷ螳､
+    福岡市早良区西新エリア
   </ClassPlaceCard>
 );
 

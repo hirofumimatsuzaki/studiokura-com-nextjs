@@ -3,7 +3,7 @@ import type { ClassPlaceAvailabilityProps } from '@/components/ClassPlaces/types
 
 const OnlineCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
   <ClassPlaceCard
-    placeName="繧ｪ繝ｳ繝ｩ繧､繝ｳ譬｡"
+    placeName="オンライン"
     imageSrc="placecard-online.jpg"
     linkHref="/online"
     adultsClass={false}
@@ -11,7 +11,7 @@ const OnlineCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
     programmingClass={true}
     availabilityText={availabilityText}
   >
-    窶ｻ skype繧剃ｽｿ縺｣縺・~4莠ｺ縺ｮ蟆台ｺｺ謨ｰ蛻ｶ繝ｬ繝・せ繝ｳ縺ｧ縺吶・
+    オンラインで受講できる少人数レッスンです。
   </ClassPlaceCard>
 );
 

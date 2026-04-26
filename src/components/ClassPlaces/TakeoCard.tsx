@@ -3,7 +3,7 @@ import type { ClassPlaceAvailabilityProps } from '@/components/ClassPlaces/types
 
 const TakeoCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
   <ClassPlaceCard
-    placeName="豁ｦ髮・｡"
+    placeName="武雄校"
     imageSrc="placecard-takeo.jpg"
     linkHref="/takeo"
     adultsClass={false}
@@ -11,7 +11,7 @@ const TakeoCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
     programmingClass={false}
     availabilityText={availabilityText}
   >
-    縲・43-0022 菴占ｳ逵梧ｭｦ髮・ｸよｭｦ髮・伴螟ｧ蟄玲ｭｦ髮・271 ARTS ITOYA
+    佐賀県武雄市武雄町エリア
   </ClassPlaceCard>
 );
 

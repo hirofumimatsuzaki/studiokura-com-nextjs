@@ -3,7 +3,7 @@ import type { ClassPlaceAvailabilityProps } from '@/components/ClassPlaces/types
 
 const KurumeCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
   <ClassPlaceCard
-    placeName="荵・蕗邀ｳ譬｡"
+    placeName="久留米校"
     imageSrc="placecard-kurume.jpg"
     linkHref="/kurume"
     adultsClass={true}
@@ -11,7 +11,7 @@ const KurumeCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
     programmingClass={true}
     availabilityText={availabilityText}
   >
-    遖丞ｲ｡逵御ｹ・蕗邀ｳ蟶ょ､ｩ逾樒伴31-6 譛晄律繝薙Ν502
+    福岡県久留米市エリア
   </ClassPlaceCard>
 );
 

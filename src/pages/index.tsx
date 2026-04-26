@@ -166,7 +166,7 @@ const Index = ({
         </ClassTypeCard>
       </CardStack>
       <Box mt={8}>
-        <Heading mt={'2em'}>教室一覧</Heading>
+        <Heading mt="2em">教室一覧</Heading>
         <Text mt={3} color="gray.700">
           福岡・糸島を中心に、通いやすい教室を掲載しています。気になる教室が見つかったら、
           各カードの「体験レッスン」からすぐにお申し込みいただけます。

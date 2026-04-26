@@ -3,7 +3,7 @@ import type { ClassPlaceAvailabilityProps } from '@/components/ClassPlaces/types
 
 const MeinohamaCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
   <ClassPlaceCard
-    placeName="蟋ｪ豬懈｡"
+    placeName="姪浜校"
     imageSrc="placecard-meinohama.jpg"
     linkHref="/meinohama"
     adultsClass={false}
@@ -11,7 +11,7 @@ const MeinohamaCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
     programmingClass={false}
     availabilityText={availabilityText}
   >
-    縲・19-0002 遖丞ｲ｡逵檎ｦ丞ｲ｡蟶り･ｿ蛹ｺ蟋ｪ縺ｮ豬懶ｼ謎ｸ∫岼・凪・・難ｼ・繝上う繝・鴻蟲ｰ
+    福岡市西区姪浜エリア
   </ClassPlaceCard>
 );
 
