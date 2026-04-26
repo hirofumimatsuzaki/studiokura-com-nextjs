@@ -113,15 +113,8 @@ const ClassPlaceCard = (props: ClassPlaceCardProps) => {
           <Text color={useColorModeValue('gray.700', 'gray.400')} textAlign="left">
             <>{children}</>
           </Text>
-          <Box
-            mt={4}
-            p={3}
-            borderWidth="1px"
-            borderColor={useColorModeValue('gray.200', 'gray.700')}
-            rounded="lg"
-            bg={useColorModeValue('gray.50', 'gray.800')}
-          >
-            <Text fontSize="sm" fontWeight="bold" mb={2}>
+          <Box mt={4}>
+            <Text fontSize="sm" fontWeight="bold" mb={1}>
               空き状況
             </Text>
             <Text fontSize="sm" color={useColorModeValue('gray.600', 'gray.300')}>
