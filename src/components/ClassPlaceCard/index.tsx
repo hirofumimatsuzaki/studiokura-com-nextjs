@@ -1,16 +1,20 @@
 import {
+  Badge,
   Box,
   Button,
   Center,
+  Divider,
+  HStack,
   Heading,
   Image,
+  Stack,
   Tag,
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { type ReactNode } from 'react';
-import { LuChevronRight } from 'react-icons/lu';
+import { LuCalendarCheck, LuChevronRight, LuMapPin } from 'react-icons/lu';
 
 type ClassPlaceCardProps = {
   placeName: string;
@@ -19,6 +23,7 @@ type ClassPlaceCardProps = {
   adultsClass?: boolean;
   kidsClass?: boolean;
   programmingClass?: boolean;
+  availabilityText?: string;
   children?: ReactNode;
 };
 
@@ -30,6 +35,7 @@ const ClassPlaceCard = (props: ClassPlaceCardProps) => {
     adultsClass,
     kidsClass,
     programmingClass,
+    availabilityText = '空き状況は準備中です。体験レッスン申込フォームから最新状況をご確認ください。',
     children,
   } = props;
   const cdnDomain = process.env.NEXT_PUBLIC_CDN_DOMAIN ?? '';
@@ -66,9 +72,16 @@ const ClassPlaceCard = (props: ClassPlaceCardProps) => {
         />
         <Box px={4}>
           <Heading fontSize={'2xl'} fontFamily={'body'}>
-            <Button href={linkHref} as={NextLink} flex={1} variant="outline">
+            <Button
+              href={linkHref}
+              as={NextLink}
+              w="full"
+              justifyContent="space-between"
+              variant="outline"
+              minH="52px"
+              px={4}
+            >
               {placeName}
-              &nbsp;&nbsp;
               <LuChevronRight />
             </Button>
           </Heading>
@@ -101,6 +114,47 @@ const ClassPlaceCard = (props: ClassPlaceCardProps) => {
           >
             <>{children}</>
           </Text>
+          <Box
+            mt={4}
+            p={3}
+            borderWidth="1px"
+            borderColor={useColorModeValue('gray.200', 'gray.700')}
+            rounded="lg"
+            bg={useColorModeValue('gray.50', 'gray.800')}
+          >
+            <HStack justify="space-between" align="center" mb={2}>
+              <Text fontSize="sm" fontWeight="bold">
+                空き状況
+              </Text>
+              <Badge colorScheme="orange">準備中</Badge>
+            </HStack>
+            <Text fontSize="sm" color={useColorModeValue('gray.600', 'gray.300')}>
+              {availabilityText}
+            </Text>
+          </Box>
+          <Divider my={4} />
+          <Stack direction={['column', 'row']} spacing={3}>
+            <Button
+              as={NextLink}
+              href={'/trial'}
+              colorScheme="blue"
+              leftIcon={<LuCalendarCheck />}
+              flex={1}
+              minH="52px"
+            >
+              無料体験レッスン
+            </Button>
+            <Button
+              as={NextLink}
+              href={linkHref}
+              variant="ghost"
+              leftIcon={<LuMapPin />}
+              flex={1}
+              minH="52px"
+            >
+              教室詳細を見る
+            </Button>
+          </Stack>
         </Box>
       </Box>
     </Center>

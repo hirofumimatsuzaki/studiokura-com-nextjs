@@ -1,9 +1,11 @@
-import { Heading } from '@chakra-ui/react';
+import { Box, Button, Heading, Stack, Text } from '@chakra-ui/react';
+import NextLink from 'next/link';
+import { LuArrowRight, LuMapPin } from 'react-icons/lu';
 
 import {
   BefuCard,
-  HakozakiCard,
   Hakozaki2Card,
+  HakozakiCard,
   HashimotoCard,
   ItoshimaCard,
   KashiiCard,
@@ -16,8 +18,8 @@ import {
   OnlineCard,
   OnojyoCard,
   SarayamaCard,
+  TakeoCard,
   TomariCard,
-  TakeoCard
 } from '@/components/ClassPlaces';
 import { ClassTypeCard } from '@/components/ClassTypeCard';
 import { Container } from '@/components/Container';
@@ -26,39 +28,101 @@ import { CardStack, Layout } from '@/components/Layout';
 import { Navigation } from '@/components/Navigation';
 
 const Index = () => (
-  <Layout>
+  <Layout title="福岡・糸島の子ども絵画教室と造形教室の無料体験レッスン | Studio Kura">
     <Navigation />
     <Container zIndex={0}>
+      <Box
+        mt={[6, 8]}
+        mb={[8, 10]}
+        px={[5, 8]}
+        py={[8, 10]}
+        bg="white"
+        borderRadius="2xl"
+        boxShadow="xl"
+      >
+        <Text
+          fontSize="sm"
+          fontWeight="bold"
+          color="blue.600"
+          letterSpacing="0.08em"
+          textTransform="uppercase"
+        >
+          Studio Kuraの子ども絵画造形教室
+        </Text>
+        <Heading mt={3} size={['xl', '2xl']} lineHeight="1.4">
+          福岡・糸島で、近くの教室を見つけて
+          <br />
+          無料体験レッスンまで迷わず進めます
+        </Heading>
+        <Text mt={4} maxW="4xl" color="gray.700" fontSize={['md', 'lg']}>
+          Studio Kuraは、福岡 絵画教室・糸島 絵画教室を探しているご家庭に向けた
+          子ども絵画教室です。絵画だけでなく造形教室や電子工作教室まで、
+          好奇心を広げる体験レッスンをご案内しています。
+        </Text>
+        <Stack direction={['column', 'row']} spacing={4} mt={6} maxW="xl">
+          <Button
+            as={NextLink}
+            href="/trial"
+            colorScheme="blue"
+            size="lg"
+            minH="56px"
+            flex={1}
+            rightIcon={<LuArrowRight />}
+          >
+            無料体験レッスンを申し込む
+          </Button>
+          <Button
+            as={NextLink}
+            href="/classrooms"
+            variant="outline"
+            size="lg"
+            minH="56px"
+            flex={1}
+            leftIcon={<LuMapPin />}
+          >
+            近くの教室を探す
+          </Button>
+        </Stack>
+        <Text mt={4} fontSize="sm" color="gray.600">
+          まず教室一覧から場所を確認し、そのまま体験レッスン申込へ進めます。
+        </Text>
+      </Box>
       <CardStack>
         <ClassTypeCard
-          title="こども絵画造形教室"
+          title="子ども絵画造形教室"
           imageSrc="card-kodomo.jpg"
           linkHref="/kids"
+          linkText="子ども向けコースを見る"
         >
-          スタジオ
-          クラ絵画造形教室は、現代の子どもを取り巻く環境の中で、どんどん減ってきている創造的に遊ぶ場、創作活動する場を子どもたちに提供しています。
-          発展段階に応じたカリキュラムを通じて、こどもの心をのびのびと育て、創造性をぐんぐん伸ばします。
+          Studio Kuraの子ども絵画造形教室では、描く・つくる・試す体験を通じて、
+          一人ひとりの発想と表現を育てます。初めての方は無料の体験レッスンから始められます。
         </ClassTypeCard>
         <ClassTypeCard
           title="大人の絵画教室"
           imageSrc="card-otona.jpg"
           linkHref="/adults"
+          linkText="大人向けコースを見る"
         >
-          Studio
-          Kuraの絵画教室は全く初めての方も気軽にいらしていただけるアトリエです。
-          当教室では様々な素材(アクリル，水彩，油絵，鉛筆，木炭など）を使った絵画表現を習得し、楽しく美術に親しんでいただくことを目的としています。
+          Studio Kuraの大人向けクラスは、初心者から経験者まで無理なく続けられる絵画教室です。
+          自分のペースで学びたい方に向けて、幅広い表現を楽しめます。
         </ClassTypeCard>
         <ClassTypeCard
           title="電子工作教室"
           imageSrc="card-denshi.jpg"
           linkHref="/programming"
+          linkText="電子工作教室を見る"
         >
-          Studio
-          Kuraの電子工作室ではProcessingやArduino、Scratchなどのプログラミング言語を使って制作します。プログラミングの基礎を楽しく学びながら、ゲームやアプリ、アート作品を作ります。
-          大人の方もお子様も受講できます。
+          ProcessingやArduinoなどを使いながら、つくる楽しさを学べる電子工作教室です。
+          アートとテクノロジーの両方に触れたいお子さまにもおすすめです。
         </ClassTypeCard>
       </CardStack>
-      <Heading mt={'2em'}>教室一覧</Heading>
+      <Box mt={8}>
+        <Heading mt={'2em'}>教室一覧</Heading>
+        <Text mt={3} color="gray.700">
+          福岡・糸島を中心に、通いやすい教室を掲載しています。気になる教室が見つかったら、
+          各カードの「無料体験レッスン」からすぐにお申し込みいただけます。
+        </Text>
+      </Box>
       <CardStack>
         <ItoshimaCard />
         <NishijinCard />
