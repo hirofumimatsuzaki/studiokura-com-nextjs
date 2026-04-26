@@ -26,7 +26,7 @@ type ClassPlaceCardProps = {
 };
 
 const defaultAvailabilityText =
-  '空き状況は準備中です。体験レッスン申込フォームから最新状況をご確認ください。';
+  '最新状況を確認中です。体験レッスン申込フォームからもご確認いただけます。';
 
 const ClassPlaceCard = (props: ClassPlaceCardProps) => {
   const {
@@ -110,10 +110,7 @@ const ClassPlaceCard = (props: ClassPlaceCardProps) => {
               </>
             )}
           </Box>
-          <Text
-            color={useColorModeValue('gray.700', 'gray.400')}
-            textAlign="left"
-          >
+          <Text color={useColorModeValue('gray.700', 'gray.400')} textAlign="left">
             <>{children}</>
           </Text>
           <Box
