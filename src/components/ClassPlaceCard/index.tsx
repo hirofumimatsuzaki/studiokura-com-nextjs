@@ -142,7 +142,7 @@ const ClassPlaceCard = (props: ClassPlaceCardProps) => {
               flex={1}
               minH="52px"
             >
-              無料体験レッスン
+              体験レッスン
             </Button>
             <Button
               as={NextLink}

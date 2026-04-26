@@ -28,7 +28,7 @@ import { CardStack, Layout } from '@/components/Layout';
 import { Navigation } from '@/components/Navigation';
 
 const Index = () => (
-  <Layout title="福岡・糸島の子ども絵画教室と造形教室の無料体験レッスン | Studio Kura">
+  <Layout title="福岡・糸島の子ども絵画教室と造形教室の体験レッスン | Studio Kura">
     <Navigation />
     <Container zIndex={0}>
       <Box
@@ -52,7 +52,7 @@ const Index = () => (
         <Heading mt={3} size={['xl', '2xl']} lineHeight="1.4">
           福岡・糸島で、近くの教室を見つけて
           <br />
-          無料体験レッスンまで迷わず進めます
+          体験レッスンまで迷わず進めます
         </Heading>
         <Text mt={4} maxW="4xl" color="gray.700" fontSize={['md', 'lg']}>
           Studio Kuraは、福岡 絵画教室・糸島 絵画教室を探しているご家庭に向けた
@@ -69,7 +69,7 @@ const Index = () => (
             flex={1}
             rightIcon={<LuArrowRight />}
           >
-            無料体験レッスンを申し込む
+            体験レッスンを申し込む
           </Button>
           <Button
             as={NextLink}
@@ -95,7 +95,7 @@ const Index = () => (
           linkText="子ども向けコースを見る"
         >
           Studio Kuraの子ども絵画造形教室では、描く・つくる・試す体験を通じて、
-          一人ひとりの発想と表現を育てます。初めての方は無料の体験レッスンから始められます。
+          一人ひとりの発想と表現を育てます。初めての方は体験レッスンから始められます。
         </ClassTypeCard>
         <ClassTypeCard
           title="大人の絵画教室"
@@ -120,7 +120,7 @@ const Index = () => (
         <Heading mt={'2em'}>教室一覧</Heading>
         <Text mt={3} color="gray.700">
           福岡・糸島を中心に、通いやすい教室を掲載しています。気になる教室が見つかったら、
-          各カードの「無料体験レッスン」からすぐにお申し込みいただけます。
+          各カードの「体験レッスン」からすぐにお申し込みいただけます。
         </Text>
       </Box>
       <CardStack>
