@@ -47,17 +47,15 @@ const Index = () => (
           letterSpacing="0.08em"
           textTransform="uppercase"
         >
-          Studio Kuraの子ども絵画造形教室
+          Studio Kura絵画教室
         </Text>
         <Heading mt={3} size={['xl', '2xl']} lineHeight="1.4">
-          福岡・糸島で、近くの教室を見つけて
-          <br />
-          体験レッスンまで迷わず進めます
+          福岡・糸島で、創造力を育てる絵画教室
         </Heading>
         <Text mt={4} maxW="4xl" color="gray.700" fontSize={['md', 'lg']}>
-          Studio Kuraは、福岡 絵画教室・糸島 絵画教室を探しているご家庭に向けた
-          子ども絵画教室です。絵画だけでなく造形教室や電子工作教室まで、
-          好奇心を広げる体験レッスンをご案内しています。
+          Studio Kura絵画教室は、福岡・糸島エリアで子どもから大人まで参加できる
+          絵画・造形教室です。絵画、工作、素材を使った表現、電子工作など、
+          幅広い創作体験を通して、一人ひとりの感性と好奇心を育てます。
         </Text>
         <Stack direction={['column', 'row']} spacing={4} mt={6} maxW="xl">
           <Button
@@ -84,7 +82,7 @@ const Index = () => (
           </Button>
         </Stack>
         <Text mt={4} fontSize="sm" color="gray.600">
-          まず教室一覧から場所を確認し、そのまま体験レッスン申込へ進めます。
+          お近くの教室を探して、体験レッスンにお申し込みいただけます。
         </Text>
       </Box>
       <CardStack>
