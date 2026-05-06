@@ -1,6 +1,5 @@
 import { Box, Button, Heading, Stack, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import { useEffect, useState } from 'react';
 import { LuArrowRight, LuMapPin } from 'react-icons/lu';
 
 import {
@@ -27,47 +26,8 @@ import { Container } from '@/components/Container';
 import { Footer } from '@/components/Footer';
 import { CardStack, Layout } from '@/components/Layout';
 import { Navigation } from '@/components/Navigation';
-import type { TopMemoMap } from '@/utils/classPlacePage';
-
-const normalizeAvailabilityText = (value: string | null | undefined): string | undefined => {
-  if (!value) return undefined;
-  const normalized = value
-    .replace(/<br\s*\/?>/gi, ' ')
-    .replace(/&nbsp;/gi, ' ')
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-  return normalized || undefined;
-};
-
-const defaultTopMemos: TopMemoMap = {};
 
 const Index = () => {
-  const [topMemos, setTopMemos] = useState<TopMemoMap>(defaultTopMemos);
-
-  useEffect(() => {
-    let cancelled = false;
-
-    const loadAvailability = async () => {
-      try {
-        const response = await fetch('/api/homepage-availability');
-        if (!response.ok) return;
-        const payload = (await response.json()) as { topMemos?: TopMemoMap };
-        if (!cancelled && payload.topMemos) {
-          setTopMemos(payload.topMemos);
-        }
-      } catch {
-        // Keep the card-level fallback copy when availability data is unavailable.
-      }
-    };
-
-    void loadAvailability();
-
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
   return (
     <Layout title="福岡・糸島の子ども絵画教室と造形教室の体験レッスン | Studio Kura">
       <Navigation />
@@ -160,37 +120,37 @@ const Index = () => {
           <Text mt={3} color="gray.700">
             福岡・糸島を中心に、通いやすい教室を掲載しています。気になる教室が見つかったら、
             各カードの「体験レッスン」からすぐにお申し込みいただけます。
-          </Text>
-        </Box>
-        <CardStack>
-          <ItoshimaCard availabilityText={normalizeAvailabilityText(topMemos.itoshima)} />
-          <NishijinCard availabilityText={normalizeAvailabilityText(topMemos.nishijin)} />
-          <TakeoCard availabilityText={normalizeAvailabilityText(topMemos.takeo)} />
-        </CardStack>
-        <CardStack>
-          <HakozakiCard availabilityText={normalizeAvailabilityText(topMemos.hakozaki)} />
-          <Hakozaki2Card availabilityText={normalizeAvailabilityText(topMemos.hakozaki2)} />
-        </CardStack>
-        <CardStack>
-          <HashimotoCard availabilityText={normalizeAvailabilityText(topMemos.hashimoto)} />
-          <MeinohamaCard availabilityText={normalizeAvailabilityText(topMemos.meinohama)} />
-          <SarayamaCard availabilityText={normalizeAvailabilityText(topMemos.sarayama)} />
-        </CardStack>
-        <CardStack>
-          <MomochiCard availabilityText={normalizeAvailabilityText(topMemos.momochi)} />
-          <KashiiCard availabilityText={normalizeAvailabilityText(topMemos.kashii)} />
-          <MotookaCard availabilityText={normalizeAvailabilityText(topMemos.motooka)} />
-        </CardStack>
-        <CardStack>
-          <BefuCard availabilityText={normalizeAvailabilityText(topMemos.befu)} />
-          <OnojyoCard availabilityText={normalizeAvailabilityText(topMemos.onojyo)} />
-          <NagazumiCard availabilityText={normalizeAvailabilityText(topMemos.nagazumi)} />
-        </CardStack>
-        <CardStack>
-          <TomariCard availabilityText={normalizeAvailabilityText(topMemos.tomari)} />
-          <KurumeCard availabilityText={normalizeAvailabilityText(topMemos.kurume)} />
-          <OnlineCard availabilityText={normalizeAvailabilityText(topMemos.online)} />
-        </CardStack>
+        </Text>
+      </Box>
+      <CardStack>
+        <ItoshimaCard />
+        <NishijinCard />
+        <TakeoCard />
+      </CardStack>
+      <CardStack>
+        <HakozakiCard />
+        <Hakozaki2Card />
+      </CardStack>
+      <CardStack>
+        <HashimotoCard />
+        <MeinohamaCard />
+        <SarayamaCard />
+      </CardStack>
+      <CardStack>
+        <MomochiCard />
+        <KashiiCard />
+        <MotookaCard />
+      </CardStack>
+      <CardStack>
+        <BefuCard />
+        <OnojyoCard />
+        <NagazumiCard />
+      </CardStack>
+      <CardStack>
+        <TomariCard />
+        <KurumeCard />
+        <OnlineCard />
+      </CardStack>
         <Footer />
       </Container>
     </Layout>
