@@ -1,7 +1,6 @@
 import { ClassPlaceCard } from '@/components/ClassPlaceCard';
-import type { ClassPlaceAvailabilityProps } from '@/components/ClassPlaces/types';
 
-const Hakozaki2Card = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
+const Hakozaki2Card = () => (
   <ClassPlaceCard
     placeName="箱崎校II"
     imageSrc="placecard-hakozaki2.jpg"
@@ -9,7 +8,6 @@ const Hakozaki2Card = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
     adultsClass={false}
     kidsClass={true}
     programmingClass={false}
-    availabilityText={availabilityText}
   >
     福岡市東区箱崎エリア
   </ClassPlaceCard>

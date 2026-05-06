@@ -1,7 +1,6 @@
 import { ClassPlaceCard } from '@/components/ClassPlaceCard';
-import type { ClassPlaceAvailabilityProps } from '@/components/ClassPlaces/types';
 
-const MomochiCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
+const MomochiCard = () => (
   <ClassPlaceCard
     placeName="百道校"
     imageSrc="placecard-momochi.jpg"
@@ -9,7 +8,6 @@ const MomochiCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
     adultsClass={false}
     kidsClass={true}
     programmingClass={false}
-    availabilityText={availabilityText}
   >
     福岡市早良区百道エリア
   </ClassPlaceCard>

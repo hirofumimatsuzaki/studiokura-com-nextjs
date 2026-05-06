@@ -1,15 +1,4 @@
-import {
-  Box,
-  Button,
-  Center,
-  Divider,
-  Heading,
-  Image,
-  Stack,
-  Tag,
-  Text,
-  useColorModeValue,
-} from '@chakra-ui/react';
+import { Box, Button, Center, Heading, Image, Stack, Tag, Text, useColorModeValue } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { type ReactNode } from 'react';
 import { LuCalendarCheck, LuChevronRight, LuMapPin } from 'react-icons/lu';
@@ -21,12 +10,8 @@ type ClassPlaceCardProps = {
   adultsClass?: boolean;
   kidsClass?: boolean;
   programmingClass?: boolean;
-  availabilityText?: string;
   children?: ReactNode;
 };
-
-const defaultAvailabilityText =
-  '最新状況を確認中です。体験レッスン申込フォームからもご確認いただけます。';
 
 const ClassPlaceCard = (props: ClassPlaceCardProps) => {
   const {
@@ -36,7 +21,6 @@ const ClassPlaceCard = (props: ClassPlaceCardProps) => {
     adultsClass,
     kidsClass,
     programmingClass,
-    availabilityText = defaultAvailabilityText,
     children,
   } = props;
   const cdnDomain = process.env.NEXT_PUBLIC_CDN_DOMAIN ?? '';
@@ -113,15 +97,6 @@ const ClassPlaceCard = (props: ClassPlaceCardProps) => {
           <Text color={useColorModeValue('gray.700', 'gray.400')} textAlign="left">
             <>{children}</>
           </Text>
-          <Box mt={4}>
-            <Text fontSize="sm" fontWeight="bold" mb={1}>
-              空き状況
-            </Text>
-            <Text fontSize="sm" color={useColorModeValue('gray.600', 'gray.300')}>
-              {availabilityText}
-            </Text>
-          </Box>
-          <Divider my={4} />
           <Stack direction={['column', 'row']} spacing={3}>
             <Button
               as={NextLink}

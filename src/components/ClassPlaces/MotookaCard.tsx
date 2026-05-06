@@ -1,7 +1,6 @@
 import { ClassPlaceCard } from '@/components/ClassPlaceCard';
-import type { ClassPlaceAvailabilityProps } from '@/components/ClassPlaces/types';
 
-const MotookaCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
+const MotookaCard = () => (
   <ClassPlaceCard
     placeName="元岡校"
     imageSrc="placecard-motooka.jpg"
@@ -9,7 +8,6 @@ const MotookaCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
     adultsClass={false}
     kidsClass={true}
     programmingClass={false}
-    availabilityText={availabilityText}
   >
     福岡市西区元岡エリア
   </ClassPlaceCard>

@@ -1,7 +1,6 @@
 import { ClassPlaceCard } from '@/components/ClassPlaceCard';
-import type { ClassPlaceAvailabilityProps } from '@/components/ClassPlaces/types';
 
-const OnlineCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
+const OnlineCard = () => (
   <ClassPlaceCard
     placeName="オンライン"
     imageSrc="placecard-online.jpg"
@@ -9,7 +8,6 @@ const OnlineCard = ({ availabilityText }: ClassPlaceAvailabilityProps) => (
     adultsClass={false}
     kidsClass={false}
     programmingClass={true}
-    availabilityText={availabilityText}
   >
     オンラインで受講できる少人数レッスンです。
   </ClassPlaceCard>
